@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Navbar from '../../components/Navbar';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 const mostWantedFoods = [
   { name: 'Elma', image: 'https://cdn.yemek.com/uploads/2015/10/elma-zencefil-suyu-aralik-2020.jpg', id: 1 },
@@ -12,8 +12,8 @@ const mostWantedFoods = [
 ];
 
 // Arama Sonuçları Bileşeni
-const SearchResults = ({ results } : any) => (
-  <div className='search-results w-full md:w-2/4 lg:w-1/3 mx-auto rounded-b-lg bg-green'>
+const SearchResults = ({ results }: any) => (
+  <div className='search-results w-full md:w-2/4 lg:w-1/3 mx-auto rounded-b-lg'>
     <div className='overflow-x-auto rounded-b-lg '>
       <table className='table-auto w-full mx-auto'>
         <tbody>
@@ -22,7 +22,7 @@ const SearchResults = ({ results } : any) => (
               <td className='px-4 py-4 text-white text-center' colSpan='2'>Besin bulunamadı.</td>
             </tr>
           ) : (
-            results.map(result =>  (
+            results.map(result => (
               <tr key={result.id} className='bg-gray-900 hover:bg-green mb-10 transition duration-300 ease-in-out'>
                 <td className='px-4 py-4 '>
                   <Link to={`/food/${result.id}`} className=' text-white'>{result.nutritionName}</Link>
@@ -43,7 +43,7 @@ const Home = () => {
 
   const handleSearch = async () => {
     const query = searchText.trim();
-    
+
     if (query !== "") {
       try {
         const response = await fetch(`https://localhost:7296/api/Nutrition/Search?SearchText=${query}`);
@@ -56,13 +56,21 @@ const Home = () => {
     }
   };
 
-  const handleChange = (e : any) => {
-    setSearchText(e.target.value);
-  };
+  const handleChange = async (e: any) => {
+    const query = e.target.value.trim();
+    setSearchText(query);
 
-  const handleKeyPress = (e : any) => {
-    if (e.key === "Enter") {
-      handleSearch();
+    if (query !== "") {
+      try {
+        const response = await fetch(`https://localhost:7296/api/Nutrition/Search?SearchText=${query}`);
+        const data = await response.json();
+        setSearchResult(data);
+        setShowSearchResults(true);
+      } catch (error) {
+        console.error('Arama hatası:', error);
+      }
+    } else {
+      setShowSearchResults(false);
     }
   };
 
@@ -71,9 +79,9 @@ const Home = () => {
       <Navbar />
       <div className='m-5 text-center'>
         <div className='slogan text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl mb-8'>
-          <span className='font-semibold'>"Kaç kalori" diye sormaktan </span> <br/>
-          <span className='font-semibold'>artık sıkıldıysan</span> <br/>
-          <span className='font-bold text-green'>Calorator</span> <br/>
+          <span className='font-semibold'>"Kaç kalori" diye sormaktan </span> <br />
+          <span className='font-semibold'>artık sıkıldıysan</span> <br />
+          <span className='font-bold text-green'>Calorator</span> <br />
           <span className='font-semibold'>tam sana göre.</span>
         </div>
         <div className='search-container w-full md:w-2/4 lg:w-1/3 mx-auto'>
@@ -84,13 +92,11 @@ const Home = () => {
               placeholder='Örneğin: Kızarmış Tavuk'
               className='flex-1 w-full bg-gray-900 text-white text-lg rounded-lg focus:outline-none text-center -mr-14'
               onChange={handleChange}
-              onKeyPress={handleKeyPress}
             />
             <div className="flex justify-end">
-            <button className="bg-green hover:bg-green-500 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out" onClick={handleSearch}>Ara</button>
+              <button className="bg-green hover:bg-green-500 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out" onClick={handleSearch}>Ara</button>
+            </div>
           </div>
-          </div>
-          
         </div>
 
         {/* Arama Sonuçları */}
