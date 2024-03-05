@@ -1,7 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body {
+
+@layer base {
+  body {
     -webkit-font-smoothing: antialiased; /* Chrome, Safari, Opera */
     -moz-osx-font-smoothing: grayscale; /* Firefox */
   }
+
+  ::selection {
+    background-color: #00CC7A; /* Arka plan rengini dilediğiniz renk koduyla değiştirin */
+    color: #ffffff; /* Metin rengini dilediğiniz renk koduyla değiştirin */
+  }
+}
