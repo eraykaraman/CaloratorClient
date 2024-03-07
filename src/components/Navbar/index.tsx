@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Transition } from '@headlessui/react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,21 +10,21 @@ function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <span className="text-green text-2xl font-bold">Calorator</span>
+            <Link to={"/"} className="text-green text-2xl font-bold">Calorator</Link>
           </div>
           <div className="hidden md:flex items-center space-x-4">
             <ul className="flex p-2 space-x-4">
               <li>
-                <a href="#" className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Kalori İhtiyacını Hesapla</a>
+                <a href="#calculator" className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Kalori İhtiyacını Hesapla</a>
               </li> 
               <li> 
-                <a href="#" className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Tarifler</a>
+                <Link to={"/tarifler"} className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Tarifler</Link>
               </li> 
               <li> 
-                <a href="#" className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">SSS</a>
+              <Link to={"/sss"} className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">SSS</Link>
               </li> 
               <li> 
-                <a href="#" className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Destek</a>
+              <Link to={"/destek"} className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Destek</Link>
               </li>
             </ul>
             <button className="bg-green hover:bg-green-600 text-white  text-sm font-semibold py-2 px-4 rounded-2xl transition duration-300 ease-in-out">Kaç Kalori?</button>
@@ -49,20 +50,17 @@ function Navbar() {
         {(ref) => (
           <div ref={ref} className="md:hidden mt-4 ml-4">
             <ul className="flex flex-col space-y-2">
-              <li>
-                <a href="#" className="text-black font-semibold hover:text-green transition duration-300 ease-in-out">Kalori İhtiyacını Hesapla</a>
-              </li>
-              <li>
-                <a href="#" className="text-black font-semibold hover:text-green transition duration-300 ease-in-out">Tarifler</a>
-              </li>
-              <li>
-                <a href="#" className="text-black font-semibold hover:text-green transition duration-300 ease-in-out">SSS</a>
-              </li>
-              <li>
-                <a href="#" className="text-black font-semibold hover:text-green transition duration-300 ease-in-out">Destek</a>
-              </li>
-              <li>
-              <a href="#" className="text-green font-bold hover:text-green-600 transition duration-300 ease-in-out">Kaç Kalori?</a>
+            <li>
+                <a href="#calculator" className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Kalori İhtiyacını Hesapla</a>
+              </li> 
+              <li> 
+                <Link to={"/tarifler"} className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Tarifler</Link>
+              </li> 
+              <li> 
+              <Link to={"/sss"} className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">SSS</Link>
+              </li> 
+              <li> 
+              <Link to={"/destek"} className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Destek</Link>
               </li>
             </ul>
 

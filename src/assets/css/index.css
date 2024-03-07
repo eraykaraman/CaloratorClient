@@ -13,3 +13,11 @@
     color: #ffffff; /* Metin rengini dilediğiniz renk koduyla değiştirin */
   }
 }
+
+.slide-enter-active, .slide-leave-active {
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-enter, .slide-leave-to {
+  transform: translateY(-100%);
+}
