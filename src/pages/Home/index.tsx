@@ -23,9 +23,12 @@ const SearchResults = ({ results }: any) => (
             </tr>
           ) : (
             results.map(result => (
-              <tr key={result.id} className='bg-gray-900 hover:bg-green mb-10 transition duration-300 ease-in-out'>
-                <td className='px-4 py-4 '>
-                  <Link to={`/food/${result.id}`} className=' text-white'>{result.nutritionName}</Link>
+              <tr key={result.id} className='bg-gray-900 hover:bg-green mb-10 transition duration-300 ease-in-out '>
+                <td className='px-4 py-4'>
+                  <Link to={`/food/${result.id}`} className='flex items-center text-white'>
+                    <img className='h-16 w-20 object-cover mr-2 rounded-lg' src={result.picture} alt={result.name} />
+                    <span className='font-semibold'>{result.nutritionName}</span>
+                  </Link>
                 </td>
               </tr>
             ))
@@ -106,17 +109,23 @@ const Home = () => {
           <h2 className='text-2xl font-semibold mb-4'>En Çok Aranan Besinler</h2>
           <div className='flex justify-center flex-wrap'>
             {mostWantedFoods.map(food => (
-              <div key={food.id} className='mr-4 mb-4'>
+              <div key={food.id} className='mr-4 mb-4'> {/* Sağa 4 birim, aşağıya 4 birim boşluk bırakır */}
                 <Link to={`/food/${food.id}`}>
                   <div className="hover:scale-105 transition-transform duration-300 drop-shadow-md ">
-                    <img src={food.image} alt={food.name} className='rounded-lg h-20 w-24 sm:h-24 sm:w-32 md:h-28 md:w-36 lg:h-32 lg:w-40 xl:h-36 xl:w-44 2xl:h-40 2xl:w-48 object-cover mb-2' />
+                    <img src={food.image} alt={food.name} className='rounded-lg h-16 w-20 sm:h-20 sm:w-28 md:h-24 md:w-32 lg:h-28 lg:w-36 xl:h-32 xl:w-40 2xl:h-36 2xl:w-44 object-cover mb-2' />
                   </div>
-                  <p className='text-base font-semibold -mt-2'>{food.name}</p>
+                  <p className='font-semibold -mt-2'>{food.name}</p>
+
+
                 </Link>
               </div>
             ))}
           </div>
         </div>
+        <div className='calculator bg-green '>
+              //bu kısıma
+        </div>
+
       </div>
     </div>
   );
