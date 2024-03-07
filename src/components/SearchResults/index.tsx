@@ -8,7 +8,7 @@ const SearchResults = ({ results }: any) => (
           <tbody>
             {results.length === 0 ? (
               <tr className='bg-red-400'>
-                <td className='px-4 py-4 text-white text-center' colSpan='2'>Besin bulunamadı.</td>
+                <td className='px-4 py-4 text-white text-center font-semibold' colSpan='2'>Besin bulunamadı.</td>
               </tr>
             ) : (
               results.map(result => (

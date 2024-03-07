@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import CalorieCalculator from '../../components/CalorieCalculator';
 import SearchResults from '../../components/SearchResults';
 import Banner from '../../components/Banner';
+import Footer from '../../components/Footer';
+import BMICalculator from '../../components/BmiCalculator';
 
 const mostWantedFoods = [
   { name: 'Elma', image: 'https://cdn.yemek.com/uploads/2015/10/elma-zencefil-suyu-aralik-2020.jpg', id: 1 },
@@ -56,7 +58,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className='my-5 text-center'>
+      <div className='mt-5 text-center'>
         <div className='slogan text-2xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-6xl mb-8'>
           <span className='font-semibold'>"Kaç kalori" diye sormaktan </span> <br />
           <span className='font-semibold'>artık sıkıldıysan</span> <br />
@@ -73,7 +75,7 @@ const Home = () => {
               onChange={handleChange}
             />
             <div className="flex justify-end">
-              <button className="bg-green hover:bg-green-500 text-white text-sm font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out" onClick={handleSearch}>Ara</button>
+              <button className="bg-green text-white py-2 px-4 rounded-lg hover:bg-white hover:text-green font-semibold transition duration-300 ease-in-out" onClick={handleSearch}>Ara</button>
             </div>
           </div>
         </div>
@@ -101,9 +103,17 @@ const Home = () => {
         <div className='banner'>
           <Banner />
         </div>
-        <div id='calculator' className='calculator p-4 bg-gray-900'>
-          <CalorieCalculator />
+        <div className='flex flex-wrap justify-center'>
+          <div id='calculator' className='calculator p-4 bg-white flex flex-col md:flex-row gap-6'>
+            <div className="w-full md:w-1/2">
+              <CalorieCalculator />
+            </div>
+            <div className="w-full md:w-1/2">
+              <BMICalculator />
+            </div>
+          </div>
         </div>
+        <Footer />
 
       </div>
     </div>

@@ -27,7 +27,7 @@ function Navbar() {
               <Link to={"/destek"} className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Destek</Link>
               </li>
             </ul>
-            <button className="bg-green hover:bg-green-600 text-white  text-sm font-semibold py-2 px-4 rounded-2xl transition duration-300 ease-in-out">Kaç Kalori?</button>
+            <Link to={"/"} className="bg-green text-white py-2 px-4 rounded-3xl hover:bg-white hover:text-green font-semibold transition duration-300 ease-in-out">Kaç Kalori?</Link>
           </div>
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)} className="text-green focus:outline-none">
