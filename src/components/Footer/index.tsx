@@ -16,7 +16,7 @@ const Footer = () => {
 
                 <div className="text-gray-300 flex flex-col lg:flex-row pb-4">
                     <div className='mb-4 lg:mb-0 lg:mr-6'>
-                        <h4 className="text-white text-lg font-semibold mb-2">Site Haritası </h4>
+                        <h4 className="text-white text-lg font-semibold mb-2">Site Haritası</h4>
                         <ul className="mt-2">
                             <li className='hover:text-green hover:underline'><Link to={"/"}>Hakkımızda</Link></li>
                             <li className='hover:text-green hover:underline'><Link to={"/"}>S.S.S</Link></li>

@@ -4,6 +4,7 @@ import Profile from "../pages/Profile";
 import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import Metric from "../pages/Metric";
 
 const routes = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ const routes = createBrowserRouter([
     {
         path: "/profile",
         element: <Profile/>,
+    },
+    {
+        path: "/metric/:id",
+        element: <Metric/>,
     },
     {
         path: "*",

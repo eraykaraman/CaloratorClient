@@ -6,7 +6,7 @@ const NotFound = () => {
   return (
     <div>
       <Navbar />
-      <div className='bg-red-200 p-10 mx-5 text-red-500 flex items-center justify-center'>
+      <div className='bg-red-200 p-10 mx-5 text-red-500 flex items-center justify-center pt-28 text-center'>
         <h4 className='font-semibold'>Aradığın sayfa buralarda yok gibi 😱 Bununla hemen ilgileniyor olacağız.</h4>
 
       </div>

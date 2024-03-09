@@ -6,25 +6,25 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white py-4 drop-shadow-md ">
+    <nav className="navbar bg-white py-4 drop-shadow-md fixed top-0 left-0 right-0 z-10 ">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <Link to={"/"} className="text-green text-2xl font-bold">Calorator</Link>
+            <Link to={"/"} className="text-green text-3xl font-bold">Calorator</Link>
           </div>
           <div className="hidden md:flex items-center space-x-4">
             <ul className="flex p-2 space-x-4">
               <li>
-                <a href="#calculator" className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Kalori İhtiyacını Hesapla</a>
+              <Link to={"/"} className="text-black font-semibold hover:text-green transition duration-300 ease-in-out">Kalori İhtiyacını Hesapla</Link>
               </li> 
               <li> 
-                <Link to={"/tarifler"} className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Tarifler</Link>
+                <Link to={"/tarifler"} className="text-black  font-semibold hover:text-green transition duration-300 ease-in-out">Tarifler</Link>
               </li> 
               <li> 
-              <Link to={"/sss"} className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">SSS</Link>
+              <Link to={"/sss"} className="text-black font-semibold hover:text-green transition duration-300 ease-in-out">SSS</Link>
               </li> 
               <li> 
-              <Link to={"/destek"} className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Destek</Link>
+              <Link to={"/destek"} className="text-black  font-semibold hover:text-green transition duration-300 ease-in-out">Destek</Link>
               </li>
             </ul>
             <Link to={"/"} className="bg-green text-white py-2 px-4 rounded-3xl hover:bg-white hover:text-green font-semibold transition duration-300 ease-in-out">Kaç Kalori?</Link>
@@ -51,7 +51,7 @@ function Navbar() {
           <div ref={ref} className="md:hidden mt-4 ml-4">
             <ul className="flex flex-col space-y-2">
             <li>
-                <a href="#calculator" className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Kalori İhtiyacını Hesapla</a>
+              <Link to={"/"} className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Kalori İhtiyacını Hesapla</Link>
               </li> 
               <li> 
                 <Link to={"/tarifler"} className="text-black text-sm font-semibold hover:text-green transition duration-300 ease-in-out">Tarifler</Link>

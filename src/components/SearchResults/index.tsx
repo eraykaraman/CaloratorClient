@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 // Arama Sonuçları Bileşeni
 const SearchResults = ({ results }: any) => (
-    <div className='search-results w-full md:w-2/4 lg:w-1/3 mx-auto rounded-b-lg'>
+    <div className='search-results w-full md:w-2/4 lg:w-2/4 mx-auto rounded-b-lg'>
       <div className='overflow-x-auto rounded-b-lg mx-4'>
         <table className='table-auto w-full mx-auto'>
           <tbody>
@@ -14,9 +14,9 @@ const SearchResults = ({ results }: any) => (
               results.map(result => (
                 <tr key={result.id} className='bg-gray-900 hover:bg-green mb-10 transition duration-300 ease-in-out '>
                   <td className='px-4 py-4'>
-                    <Link to={`/food/${result.id}`} className='flex items-center text-white'>
+                    <Link to={`/metric/${result.id}`} className='flex items-center text-white'>
                       <img className='h-16 w-20 object-cover mr-2 rounded-lg' src={result.picture} alt={result.name} />
-                      <span className='font-semibold'>{result.nutritionName}</span>
+                      <span className='font-semibold'>{result.nutritionName} <span className="text-gray-400 text-sm">{result.amount}</span></span>
                     </Link>
                   </td>
                 </tr>
