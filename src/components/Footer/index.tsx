@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 p-4">
+        <footer className="bg-gray-900 p-4">
             <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between px-4">
                 <div className="text-center lg:text-left mb-4 lg:mb-0 lg:mr-6">
                     <span className='text-green font-semibold text-2xl'>
@@ -33,7 +33,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-gray-800  text-center text-gray-300 text-sm">
+            <div className="bg-gray-900  text-center text-gray-300 text-sm">
                 <hr className='border-green pt-4'/>
                 &copy; {new Date().getFullYear()} <span className='text-green font-semibold'>Calorator</span> Tüm hakları saklıdır. 
             </div>

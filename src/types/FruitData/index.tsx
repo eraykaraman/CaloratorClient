@@ -1,4 +1,5 @@
 interface FruitData {
+    id:string;
     name: string;
     amount: string;
     picture: string;
