@@ -1,4 +1,4 @@
-interface FruitData {
+interface NutritionType {
     id:string;
     name: string;
     amount: string;

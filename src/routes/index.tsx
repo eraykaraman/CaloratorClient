@@ -5,6 +5,8 @@ import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Metric from "../pages/Metric";
+import Recipe from "../pages/Recipes";
+import Faq from "../pages/Faq";
 
 const routes = createBrowserRouter([
     {
@@ -26,6 +28,10 @@ const routes = createBrowserRouter([
     {
         path: "/metric/:id",
         element: <Metric/>,
+    },
+    {
+        path: "/tarifler",
+        element: <Recipe/>,
     },
     {
         path: "*",

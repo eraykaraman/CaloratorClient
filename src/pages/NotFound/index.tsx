@@ -1,20 +1,23 @@
-import React from 'react'
-import Navbar from '../../components/Navbar'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 const NotFound = () => {
   return (
     <div>
-      <Navbar />
-      <div className='bg-red-200 p-10 mx-5 text-red-500 flex items-center justify-center pt-28 text-center'>
-        <h4 className='font-semibold'>Aradığın sayfa buralarda yok gibi 😱 Bununla hemen ilgileniyor olacağız.</h4>
-
+      <Navbar/>
+      <div className="flex flex-col items-center justify-center h-screen">
+        <h1 className="text-9xl font-bold text-green mb-4">404</h1>
+        <p className="text-2xl font-semibold mb-4">Hmm... Kaybolmuş gibisin.</p>
+        <p>
+          Anasayfaya dönmek için
+          <a href="/" className="text-green hover:underline"> buraya</a> tıklayabilirsin.
+        </p>
       </div>
-      <div className='bg-green p-10 mx-5'>
-        <p className='font-semibold underline px-4 text-center text-white'><Link to="/">Anasayfaya Geri Dön</Link></p>
-        </div>
+      <Footer/>
     </div>
-  )
+
+  );
 }
 
-export default NotFound
+export default NotFound;

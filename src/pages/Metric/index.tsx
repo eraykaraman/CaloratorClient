@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 const Metric = () => {
   const { id } = useParams();
-  const [fruitData, setFruitData] = useState<FruitData | null>(null);
+  const [fruitData, setFruitData] = useState<NutritionType | null>(null);
   const [activityTime, setActivityTime] = useState({
     walking: 0,
     running: 0,
@@ -70,7 +71,7 @@ const Metric = () => {
 
             <div className='text-center p-8'>
               <h3 className="text-2xl font-bold">🔥 Bu besini nasıl eritebilirsin?</h3>
-              <div className="max-w-md mx-auto mt-8 p-8 rounded-lg shadow-lg text-center">
+              <div className="max-w-md mx-auto  p-8 rounded-lg shadow-lg text-center">
                 <p className="text-lg font-semibold mt-3">Yürüyerek (4kmh) <span className='ml-2 bg-gray-900 text-white rounded-lg px-4 py-1 block sm:inline'>{activityTime.walking} dakika</span> </p>
                 <p className="text-lg font-semibold mt-3">Koşarak (9kmh) <span className='ml-2 bg-gray-900 text-white rounded-lg px-4 py-1 block sm:inline'>{activityTime.running} dakika</span></p>
                 <p className="text-lg font-semibold mt-3">Bisiklet Sürerek (16kmh) <span className='ml-2 bg-gray-900 text-white rounded-lg px-4 py-1 block sm:inline'>{activityTime.cycling} dakika</span></p>
@@ -81,6 +82,7 @@ const Metric = () => {
           <p className="text-center mt-8">Loading...</p>
         )}
       </div>
+      <Footer/>
     </div>
   );
 };
